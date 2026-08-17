@@ -1,34 +1,33 @@
-# React + TypeScript + Vite
+# AI Interview Coach — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React + TypeScript + Vite frontend for the AI Interview Coach web application.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Google OAuth 2.0 Login
+- Job Description Parsing & Custom Skill Input
+- Interactive Question & Answer Evaluation
+- Performance Reports & History Breakdown
+- Global Leaderboard
 
-## React Compiler
+## 🛠️ Setup & Installation
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Note: This will impact Vite dev & build performances.
+2. Copy `.env.example` to `.env` and fill in your values:
+   ```bash
+   cp .env.example .env
+   ```
 
-## Expanding the Oxlint configuration
+3. Run local development server:
+   ```bash
+   npm run dev
+   ```
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+4. Build for production:
+   ```bash
+   npm run build
+   ```
