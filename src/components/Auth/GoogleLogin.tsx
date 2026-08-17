@@ -151,7 +151,7 @@ export const GoogleLoginButton: React.FC = () => {
         }}
         theme="filled_blue"
         shape="pill"
-        size="medium"
+        size="large"
         text="signin_with"
       />
     </div>

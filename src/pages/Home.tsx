@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navigation/Navbar";
 import { useAuth } from "../context/AuthContext";
+import { GoogleLoginButton } from "../components/Auth/GoogleLogin";
 import { Zap, BrainCircuit, Target, Award, ArrowRight } from "lucide-react";
 
 export const Home: React.FC = () => {
@@ -31,8 +32,8 @@ export const Home: React.FC = () => {
           Paste any Job Description. Our AI extracts core skills, generates custom role-specific questions, and evaluates your responses with detailed scoring out of 10.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          {user && (
+        <div className="flex flex-col items-center justify-center gap-4">
+          {user ? (
             <Link
               to="/interview"
               className="flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 transition-all shadow-xl shadow-indigo-500/25 active:scale-95"
@@ -40,6 +41,11 @@ export const Home: React.FC = () => {
               <span>Start Interview Session</span>
               <ArrowRight size={18} />
             </Link>
+          ) : (
+            <div className="flex flex-col items-center gap-3 p-2">
+              <GoogleLoginButton />
+              <span className="text-xs text-slate-500">Sign in with Google to start practicing</span>
+            </div>
           )}
         </div>
 
