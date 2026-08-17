@@ -134,29 +134,26 @@ export const GoogleLoginButton: React.FC = () => {
   }
 
   return (
-    <div className="flex items-center justify-center">
-      {/* Official Google OAuth Popup Button */}
-      <div className="overflow-hidden rounded-xl shadow-lg border border-slate-700/60">
-        <GoogleLogin
-          onSuccess={async (credentialResponse) => {
-            if (credentialResponse.credential) {
-              try {
-                await loginWithGoogle(credentialResponse.credential);
-                toast.success("Signed in with Google!");
-              } catch (err) {
-                toast.error("Google sign in failed. Please try again.");
-              }
+    <div className="flex items-center justify-center min-h-[40px]">
+      <GoogleLogin
+        onSuccess={async (credentialResponse) => {
+          if (credentialResponse.credential) {
+            try {
+              await loginWithGoogle(credentialResponse.credential);
+              toast.success("Signed in with Google!");
+            } catch (err) {
+              toast.error("Google sign in failed. Please try again.");
             }
-          }}
-          onError={() => {
-            toast.error("Google login failed.");
-          }}
-          theme="filled_blue"
-          shape="pill"
-          size="medium"
-          text="signin_with"
-        />
-      </div>
+          }
+        }}
+        onError={() => {
+          toast.error("Google login failed.");
+        }}
+        theme="filled_blue"
+        shape="pill"
+        size="medium"
+        text="signin_with"
+      />
     </div>
   );
 };
