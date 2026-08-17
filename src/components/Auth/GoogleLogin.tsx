@@ -149,6 +149,8 @@ export const GoogleLoginButton: React.FC = () => {
         onError={() => {
           toast.error("Google login failed.");
         }}
+        useOneTap={true}
+        auto_select={true}
         theme="filled_blue"
         shape="pill"
         size="large"
