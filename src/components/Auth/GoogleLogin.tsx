@@ -141,8 +141,9 @@ export const GoogleLoginButton: React.FC = () => {
             try {
               await loginWithGoogle(credentialResponse.credential);
               toast.success("Signed in with Google!");
-            } catch (err) {
-              toast.error("Google sign in failed. Please try again.");
+            } catch (err: any) {
+              const msg = err.response?.data?.message || "Google sign in failed. Please try again.";
+              toast.error(msg);
             }
           }
         }}
