@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
 
         {/* Right Section: Auth Profile & Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <GoogleLoginButton />
+          {user && <GoogleLoginButton />}
 
           {/* Mobile Menu Hamburger Toggle (Visible only when logged in on small screens) */}
           {user && (
